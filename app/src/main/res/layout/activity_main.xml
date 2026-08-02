@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".MainActivity">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!-- AI Logo -->
+
+        <TextView
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="@drawable/logo_background"
+            android:gravity="center"
+            android:text="✦"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+
+        <!-- App Name -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PULSE AI"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Powered by Groq"
+                android:textColor="#B98FA0"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+
+        <!-- Status -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@drawable/status_background"
+            android:gravity="center"
+            android:paddingStart="13dp"
+            android:paddingEnd="13dp"
+            android:text="●  ONLINE"
+            android:textColor="#4ADE80"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <!-- Header Divider -->
+
+    <View
+        android:id="@+id/headerDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#2A1620"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header" />
+
+
+    <!-- ================= CHAT AREA ================= -->
+
+    <ScrollView
+        android:id="@+id/chatScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@id/inputContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerDivider">
+
+
+        <LinearLayout
+            android:id="@+id/chatContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="35dp"
+            android:paddingBottom="35dp">
+
+
+            <!-- Welcome Badge -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/welcome_badge"
+                android:paddingStart="12dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="7dp"
+                android:text="✦  AI ASSISTANT"
+                android:textColor="#F9A8D4"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+
+            <!-- Welcome Title -->
+
+            <TextView
+                android:id="@+id/helloText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Hello, Akanksha."
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/subtitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="What can I help you build today?"
+                android:textColor="#A3818C"
+                android:textSize="20sp" />
+
+
+            <!-- Suggestion Label -->
+
+            <TextView
+                android:id="@+id/suggestionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:text="QUICK START"
+                android:textColor="#8C6B76"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+
+            <!-- Suggestion 1 -->
+
+            <TextView
+                android:id="@+id/suggestion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/suggestion_background"
+                android:drawablePadding="10dp"
+                android:padding="18dp"
+                android:text="✦   Explain artificial intelligence simply"
+                android:textColor="#E5E7EB"
+                android:textSize="15sp" />
+
+
+            <!-- Suggestion 2 -->
+
+            <TextView
+                android:id="@+id/suggestion2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/suggestion_background"
+                android:padding="18dp"
+                android:text="⌘   Help me write clean Kotlin code"
+                android:textColor="#E5E7EB"
+                android:textSize="15sp" />
+
+
+            <!-- Suggestion 3 -->
+
+            <TextView
+                android:id="@+id/suggestion3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/suggestion_background"
+                android:padding="18dp"
+                android:text="◈   Suggest a creative AI project idea"
+                android:textColor="#E5E7EB"
+                android:textSize="15sp" />
+
+
+            <!-- User Label -->
+
+            <TextView
+                android:id="@+id/userLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="5dp"
+                android:text="YOU"
+                android:textColor="#6B7280"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <!-- User Message -->
+
+            <TextView
+                android:id="@+id/userQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/user_message_background"
+                android:maxWidth="310dp"
+                android:paddingStart="18dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="14dp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+
+            <!-- AI Label -->
+
+            <TextView
+                android:id="@+id/aiLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="5dp"
+                android:text="✦  PULSE AI"
+                android:textColor="#F472B6"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <!-- AI Response -->
+
+            <TextView
+                android:id="@+id/aiResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ai_message_background"
+                android:lineSpacingExtra="5dp"
+                android:padding="18dp"
+                android:textColor="#EAD9DF"
+                android:textIsSelectable="true"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!-- ================= INPUT AREA ================= -->
+
+    <LinearLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/input_background"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        android:minHeight="66dp"
+        android:orientation="horizontal"
+        android:paddingStart="17dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#B98FA0"
+            android:textSize="25sp" />
+
+
+        <EditText
+            android:id="@+id/promptEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Message Pulse AI..."
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minHeight="48dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#64748B"
+            android:textSize="15sp" />
+
+
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/send_button_background"
+            android:contentDescription="Send message"
+            android:padding="13dp"
+            android:src="@android:drawable/ic_menu_send"
+            app:tint="#FFFFFF" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
